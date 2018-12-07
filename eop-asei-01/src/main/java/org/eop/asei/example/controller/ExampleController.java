@@ -6,7 +6,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.eop.asei.example.bean.Example;
-import org.eop.asei.example.service.IExampleService;
 import org.eop.common.http.invoker.IHttpInvoker;
 import org.eop.common.idgene.IdGenerator;
 import org.eop.common.map.MapBuilder;
@@ -25,9 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExampleController {
 
 	@Autowired
-	private IExampleService exampleService;
-	
-	@Autowired
 	private IdGenerator idGenerator;
 	@Autowired
 	private IdGenerator antherOne;
@@ -44,7 +40,6 @@ public class ExampleController {
 		example.setName("spring-boot");
 		example.setAge(8);
 		example.setBirthday(new Date());
-		exampleService.insertExample(example);
 		return example;
 	}
 	
